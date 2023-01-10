@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
-const { ADMIN, USER,EXECUTIVE,FIELDEXECUTIVE } = require("./constants");
 const { boolean } = require("joi");
 
 const User = mongoose.model(
@@ -32,12 +31,6 @@ const User = mongoose.model(
       minLength: 5,
       maxLength: 8,
       },
-    
-    role: {
-      type: String,
-      enum: [ADMIN, USER,EXECUTIVE,FIELDEXECUTIVE],
-      default: USER,
-    },
     contactNumber: {
       type: Number,
       min: 1000000000,
@@ -47,7 +40,14 @@ const User = mongoose.model(
       type: Boolean,
       default: false,
       },
-    otCreatedAt:DateTime
+    passwordCreatAt: {
+      type: Date
+    },
+    role: {
+      type: String,
+      required:true
+    }
+     
     
   }, { timestamps: true })
 );

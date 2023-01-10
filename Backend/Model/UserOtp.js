@@ -19,7 +19,9 @@ const UserOTP = mongoose.model(
         }
         ,
         expiresAT: {
-          type:Date  
+            type: Date,
+            default: Date.now,
+          
         }
     }))
 

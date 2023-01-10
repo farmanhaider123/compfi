@@ -7,7 +7,7 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisComponent } from './components/regis/regis.component';
-
+import {  FormsModule,ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,9 @@ import { RegisComponent } from './components/regis/regis.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

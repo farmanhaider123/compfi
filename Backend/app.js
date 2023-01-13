@@ -15,7 +15,7 @@ mongoose
   .connect(connectionString)
   .then((res) => console.log("database Connected"))
     .catch((err) => console.log("Erroe:" + err));
-  const mainRoutes = require("./index");
+  const mainRoutes = require("./route");
 const { urlencoded } = require('express');
 app.use("/", mainRoutes);
 app.listen(port, (err) => {

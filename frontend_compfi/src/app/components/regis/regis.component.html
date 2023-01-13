@@ -24,7 +24,7 @@
   </body>
   <div class="container">
     <h4>Registration Yourself Here!!</h4>
-    <form [formGroup]="myForm">
+    <form [formGroup]="myForm" (ngSubmit)="postData()">
       <div class="mb-3">
         <div class="form-group">
           <label>First Name</label>
@@ -33,43 +33,43 @@
               type="text"
               class="form-control"
               style="border: none"
-              id="FirstName"
-              formControlName="FirstName"
+              id="firstName"
+              formControlName="firstName"
             />
             <i class="fa fa-user icon" style="font-size: 24px"></i>
           </div>
           <div
             class="form-control is-invalid"
-            *ngIf="fdata['FirstName'].invalid && fdata['FirstName'].touched"
+            *ngIf="fdata['firstName'].invalid && fdata['firstName'].touched"
           >
             <div
               *ngIf="
-                fdata['FirstName'].errors &&
-                fdata['FirstName'].errors['required']
+                fdata['firstName'].errors &&
+                fdata['firstName'].errors['required']
               "
             >
               Please Enter First Name
             </div>
             <div
               *ngIf="
-                fdata['FirstName'].errors &&
-                fdata['FirstName'].errors['pattern']
+                fdata['firstName'].errors &&
+                fdata['firstName'].errors['pattern']
               "
             >
               First Name is not Valid!!
             </div>
             <div
               *ngIf="
-                fdata['FirstName'].errors &&
-                fdata['FirstName'].errors['minlength']
+                fdata['firstName'].errors &&
+                fdata['firstName'].errors['minlength']
               "
             >
               enter more than 2 characters!!
             </div>
             <div
               *ngIf="
-                fdata['FirstName'].errors &&
-                fdata['FirstName'].errors['maxlength']
+                fdata['firstName'].errors &&
+                fdata['firstName'].errors['maxlength']
               "
             >
               Name should be less than 20 characters!!
@@ -85,41 +85,41 @@
               type="text"
               class="form-control"
               style="border: none"
-              id="LastName"
-              formControlName="LastName"
+              id="lastName"
+              formControlName="lastName"
             />
             <i class="fa fa-user icon" style="font-size: 24px"></i>
           </div>
           <div
             class="form-control is-invalid"
-            *ngIf="fdata['LastName'].invalid && fdata['LastName'].touched"
+            *ngIf="fdata['lastName'].invalid && fdata['lastName'].touched"
           >
             <div
               *ngIf="
-                fdata['LastName'].errors && fdata['LastName'].errors['required']
+                fdata['lastName'].errors && fdata['lastName'].errors['required']
               "
             >
               Please Enter Last Name
             </div>
             <div
               *ngIf="
-                fdata['LastName'].errors && fdata['LastName'].errors['pattern']
+                fdata['lastName'].errors && fdata['lastName'].errors['pattern']
               "
             >
               Last Name is not Valid!!
             </div>
             <div
               *ngIf="
-                fdata['LastName'].errors &&
-                fdata['LastName'].errors['minlength']
+                fdata['lastName'].errors &&
+                fdata['lastName'].errors['minlength']
               "
             >
               enter more than 2 characters!!
             </div>
             <div
               *ngIf="
-                fdata['LastName'].errors &&
-                fdata['LastName'].errors['maxlength']
+                fdata['lastName'].errors &&
+                fdata['lastName'].errors['maxlength']
               "
             >
               Name should be less than 20 characters!!
@@ -193,35 +193,39 @@
       </div>
       <div class="mb-3">
         <div class="form-group">
-          <label>Contact Number</label>
+          <label>contactNumber Number</label>
           <div class="a1">
             <input
-              type="contact"
+              type="contactNumber"
               maxlength="10"
               class="form-control"
               style="border: none"
-              id="contact"
-              formControlName="contact"
+              id="contactNumber"
+              formControlName="contactNumber"
             />
             <i class="fa fa-phone icon" style="font-size: 24px"></i>
           </div>
           <div
             class="form-control is-invalid"
-            *ngIf="fdata['contact'].invalid && fdata['contact'].touched"
+            *ngIf="
+              fdata['contactNumber'].invalid && fdata['contactNumber'].touched
+            "
           >
             <div
               *ngIf="
-                fdata['contact'].errors && fdata['contact'].errors['required']
+                fdata['contactNumber'].errors &&
+                fdata['contactNumber'].errors['required']
               "
             >
-              Contact Number is required
+              contactNumber Number is required
             </div>
             <div
               *ngIf="
-                fdata['contact'].errors && fdata['contact'].errors['pattern']
+                fdata['contactNumber'].errors &&
+                fdata['contactNumber'].errors['pattern']
               "
             >
-              Enter Correct Contact Number!!
+              Enter Correct contactNumber Number!!
             </div>
           </div>
           <br />

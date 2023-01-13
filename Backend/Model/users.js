@@ -1,37 +1,38 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
-const { boolean } = require("joi");
+const { boolean, date } = require("joi");
 
 const User = mongoose.model(
   "user",
   new mongoose.Schema({
     firstName: {
       type: String,
-      required: true,
+      required:true,
       minLength: 1,
       maxLength: 25,
     },
     lastName: {
       type: String,
-      required: true,
+       required:true,
       minLength: 1,
       maxLength: 25,
     },
     email: {
       type: String,
-      required: true,
+      required:true,
       unique: true,
       minLength: 5,
       maxLengh: 155,
     },
     password: {
       type: String,
-      required: true,
+       required:true,
       minLength: 5,
-      maxLength: 8,
+      maxLength: 255,
       },
     contactNumber: {
+        required:true,
       type: Number,
       min: 1000000000,
       unique: true,
@@ -41,11 +42,12 @@ const User = mongoose.model(
       default: false,
       },
     passwordCreatAt: {
-      type: Date
+      type: Date,
+      default:Date.now
     },
     role: {
       type: String,
-      required:true
+      drfault:'user'
     }
      
     
@@ -72,4 +74,4 @@ const validatePassword = ({ name, password }) => {
   return passwordComplexity().validate(password);
 };
 
-module.exports = { User, validateUser, validatePassword };
+module.exports = { User};

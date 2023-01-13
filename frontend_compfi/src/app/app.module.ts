@@ -8,16 +8,21 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisComponent } from './components/regis/regis.component';
 import {  FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { OtpPageComponent } from './components/otp-page/otp-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     LandingpageComponent,
     NavComponent,
     LoginComponent,
-    RegisComponent
+    RegisComponent,
+    OtpPageComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
